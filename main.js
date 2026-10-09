@@ -4,19 +4,19 @@ const obras = {
             numero: 1,
             titulo: 'Provecho',
             imagen: 'provecho.webp',
-            descripcion: 'Es una instalación sonora multicanal que dialoga con la comida. A partir de grabaciones de campo de gente eructando después de comer su comida favorita de la infancia, se busca rememorar los moementos gratificantes vividos en la infancia de las personas, ejerciendo así, un espacio de expecionalidad de su entorno cotidiano. Esta instalación queda como registro de dicha experiencia.'
+            descripcion: 'Es una instalación sonora multicanal que dialoga con la comida.<br><br>A partir de grabaciones de campo de gente eructando después de comer su comida favorita de la infancia, se busca rememorar los moementos gratificantes vividos en la infancia de las personas, ejerciendo así, un espacio de expecionalidad de su entorno cotidiano.<br><br>Esta instalación queda como registro de dicha experiencia.'
         },
         obra2: {
             numero: 2,
             titulo: 'Saludos',
             imagen: 'simi.jpeg',
-            descripcion: 'Es una escultura 3D del doctor SIMI que en ralidad tiene en su interior un hispotal del IMSS. A partir de este elemnto 3D se busca tensionar la realidad de falta de servicio público de salud en México y cómo muchas personas usan empresas privada como similares para sus consultas médicas. La escultrua es navegabl y en su interior alberga escenas de violencia cotifdiana en hospitales públicos de México'
+            descripcion: 'Es una escultura 3D del doctor SIMI que en ralidad tiene en su interior un hispotal del IMSS.<br><br>A partir de este elemnto 3D se busca tensionar la realidad de falta de servicio público de salud en México y cómo muchas personas usan empresas privada como similares para sus consultas médicas.<br><br>La escultrua es navegabl y en su interior alberga escenas de violencia cotifdiana en hospitales públicos de México'
         },
         obra3: {
             numero: 3,
             titulo: 'Gracias',
             imagen: 'gracias.webp', 
-            descripcion: 'Un videojuego diseñado para agradecer a la comunidad que me ha acompañado a lo largo de mi crecimiento profesional como artista. Este espacio virtual bidimensional es posible navegar una narrativa donde se cuenta mi historia y relación con mis personas cercanas desde que comnecé a estudiar arte hasta la fecha. Esta suerte de diario prentende exhibir cómo les vinculos humanos ineludiblemnte terminan materialisándose en el desarrolo profesional de cada uno.'
+            descripcion: 'Un videojuego diseñado para agradecer a la comunidad que me ha acompañado a lo largo de mi crecimiento profesional como artista.<br><br>Este espacio virtual bidimensional es posible navegar una narrativa donde se cuenta mi historia y relación con mis personas cercanas desde que comnecé a estudiar arte hasta la fecha.<br><br>Esta suerte de diario prentende exhibir cómo les vinculos humanos ineludiblemnte terminan materialisándose en el desarrolo profesional de cada uno.'
         }
     },
     statement: 'Me gusta trabajar en torno a experiencia humanas cotidianas, reflexionando sobre las frases que normalmente nos decimos para estrucuturar la convivencia del día a día. A partir de ahi genero ejercicios creativos que desarrollan los campos semánticos de dichas palabras. Más que explorar un absurdo abro espacios en un territorio constantemente pasado por alto, vinculado a las buenas costumbres.'
@@ -47,47 +47,18 @@ for (let i = 0; i < listadoObras.length; i++) {
 
     let encabezado = document.createElement('div')
     encabezado.setAttribute('class', 'encabezado-obra')
-    encabezado.innerHTML = `<p class=numero-obras>0${obraId}</p><h2>${diccionarioObraEnTurno.titulo}</h2>`
-
+    encabezado.innerHTML = `<p class=numero-obra>0${obraId}</p><h2>${diccionarioObraEnTurno.titulo}</h2>`
+    
+    let obraContenido = document.createElement('div')
+    obraContenido.setAttribute('class', 'obra-contenido')
+    obraContenido.innerHTML = `<img src="${diccionarioObraEnTurno.imagen}"><p>${diccionarioObraEnTurno.descripcion}</p>`
 
     descripcionObra.appendChild(encabezado)
+    descripcionObra.appendChild(obraContenido)
     obraEnTurno.appendChild(descripcionObra)
     contenedorObras.appendChild(obraEnTurno);
     
     console.log(obraEnTurno)
-
-
-    // <div class='obra' id='obra3'>
-    //             <div class="descripción-obra">
-
-    //                 <div class="encabezado-obra">
-    //                     <p class="numero-obra">03</p>
-
-    //                     <h2>
-    //                         Gracias
-    //                     </h2>
-    //                 </div>
-
-    //                 <div class="obra-contenido">
-
-    //                     <img src="/gracias.webp" alt="Imagén de el videojuego bidimensional">
-
-    //                     <p>
-    //                         Un videojuego diseñado para agradecer a la comunidad que me ha acompañado a lo largo de mi
-    //                         crecimiento profesional como artista.
-    //                         <br><br>
-    //                         Este espacio virtual bidimensional es posible navegar una narrativa donde se cuenta mi
-    //                         historia y relación con mis personas cercanas desde que comnecé a estudiar arte hasta la
-    //                         fecha.
-    //                         <br><br>
-    //                         Esta suerte de diario prentende exhibir cómo les vinculos humanos ineludiblemnte terminan
-    //                         materialisándose en el desarrolo profesional de cada uno.
-    //                     </p>
-    //                 </div>
-    //             </div>
-    // </div>
-
-
 }
 
 
