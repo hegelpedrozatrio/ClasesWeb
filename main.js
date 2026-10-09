@@ -22,18 +22,74 @@ const obras = {
     statement: 'Me gusta trabajar en torno a experiencia humanas cotidianas, reflexionando sobre las frases que normalmente nos decimos para estrucuturar la convivencia del día a día. A partir de ahi genero ejercicios creativos que desarrollan los campos semánticos de dichas palabras. Más que explorar un absurdo abro espacios en un territorio constantemente pasado por alto, vinculado a las buenas costumbres.'
 }
 
-let statement = obras.statement
-
-let about = document.createElement('p')
-about.innerHTML = statement
+let about = document.createElement('p')   //crear una variable about para alojar la creación de un nuevo elemento de párrafo
+about.innerHTML = obras.statement
 document.getElementsByClassName('about')[0].appendChild(about)
 
 // console.log(obras.obras.obra1)
 // console.log(obras['obras']['obra1'])
 let listadoObras = Object.keys(obras.obras)
 // console.log(obras.obras[listadoObras[0]])
+// let contenedorObras = document.getElementsByClassName('obras')[0]
+
+const contenedorObras = document.getElementsByClassName('obras')[0];
+
 for (let i = 0; i < listadoObras.length; i++) {
-    console.log(obras.obras[listadoObras[i]])
+    let obraId = i + 1
+    let diccionarioObraEnTurno = obras.obras[listadoObras[i]]
+
+    let obraEnTurno = document.createElement('div')
+    obraEnTurno.setAttribute('class', 'obra');
+    obraEnTurno.setAttribute('id', 'obra' + obraId)
+
+    let descripcionObra = document.createElement('div')
+    descripcionObra.setAttribute('class', 'descripcion-obra')
+
+    let encabezado = document.createElement('div')
+    encabezado.setAttribute('class', 'encabezado-obra')
+    encabezado.innerHTML = `<p class=numero-obras>0${obraId}</p><h2>${diccionarioObraEnTurno.titulo}</h2>`
+
+
+    descripcionObra.appendChild(encabezado)
+    obraEnTurno.appendChild(descripcionObra)
+    contenedorObras.appendChild(obraEnTurno);
+    
+    console.log(obraEnTurno)
+
+
+    // <div class='obra' id='obra3'>
+    //             <div class="descripción-obra">
+
+    //                 <div class="encabezado-obra">
+    //                     <p class="numero-obra">03</p>
+
+    //                     <h2>
+    //                         Gracias
+    //                     </h2>
+    //                 </div>
+
+    //                 <div class="obra-contenido">
+
+    //                     <img src="/gracias.webp" alt="Imagén de el videojuego bidimensional">
+
+    //                     <p>
+    //                         Un videojuego diseñado para agradecer a la comunidad que me ha acompañado a lo largo de mi
+    //                         crecimiento profesional como artista.
+    //                         <br><br>
+    //                         Este espacio virtual bidimensional es posible navegar una narrativa donde se cuenta mi
+    //                         historia y relación con mis personas cercanas desde que comnecé a estudiar arte hasta la
+    //                         fecha.
+    //                         <br><br>
+    //                         Esta suerte de diario prentende exhibir cómo les vinculos humanos ineludiblemnte terminan
+    //                         materialisándose en el desarrolo profesional de cada uno.
+    //                     </p>
+    //                 </div>
+    //             </div>
+    // </div>
+
+
 }
+
+
 
 
